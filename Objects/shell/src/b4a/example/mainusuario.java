@@ -11,13 +11,13 @@ import anywheresoftware.b4a.pc.Debug;
 import anywheresoftware.b4a.pc.B4XTypes.B4XClass;
 import anywheresoftware.b4a.pc.B4XTypes.DeviceClass;
 
-public class main implements IRemote{
-	public static main mostCurrent;
+public class mainusuario implements IRemote{
+	public static mainusuario mostCurrent;
 	public static RemoteObject processBA;
     public static boolean processGlobalsRun;
     public static RemoteObject myClass;
     public static RemoteObject remoteMe;
-	public main() {
+	public mainusuario() {
 		mostCurrent = this;
 	}
     public RemoteObject getRemoteMe() {
@@ -30,7 +30,7 @@ public class main implements IRemote{
 
 	}
     static {
-        anywheresoftware.b4a.pc.RapidSub.moduleToObject.put(new B4XClass("main"), "b4a.example.main");
+        anywheresoftware.b4a.pc.RapidSub.moduleToObject.put(new B4XClass("mainusuario"), "b4a.example.mainusuario");
 	}
 
 public boolean isSingleton() {
@@ -50,21 +50,21 @@ public boolean isSingleton() {
 		_activity = (RemoteObject) args[3];
         anywheresoftware.b4a.keywords.Common.Density = (Float)args[4];
         remoteMe = (RemoteObject) args[5];
-		pcBA = new PCBA(this, main.class);
+		pcBA = new PCBA(this, mainusuario.class);
         main_subs_0.initializeProcessGlobals();
 		return pcBA;
 	}
 public static RemoteObject __c = RemoteObject.declareNull("anywheresoftware.b4a.keywords.Common");
-public static RemoteObject _xui = RemoteObject.declareNull("anywheresoftware.b4a.objects.B4XViewWrapper.XUI");
-public static RemoteObject _panel1 = RemoteObject.declareNull("anywheresoftware.b4a.objects.PanelWrapper");
-public static RemoteObject _panel2 = RemoteObject.declareNull("anywheresoftware.b4a.objects.PanelWrapper");
-public static RemoteObject _manager = RemoteObject.declareNull("b4a.example.manageruser");
+public static RemoteObject _txt_nombre = RemoteObject.declareNull("anywheresoftware.b4a.objects.EditTextWrapper");
 public static RemoteObject _txt_email = RemoteObject.declareNull("anywheresoftware.b4a.objects.EditTextWrapper");
-public static RemoteObject _txt_password = RemoteObject.declareNull("anywheresoftware.b4a.objects.EditTextWrapper");
+public static RemoteObject _txt_passwd = RemoteObject.declareNull("anywheresoftware.b4a.objects.EditTextWrapper");
+public static RemoteObject _list_usuario = RemoteObject.declareNull("anywheresoftware.b4a.objects.ListViewWrapper");
+public static RemoteObject _manger = RemoteObject.declareNull("b4a.example.manageruser");
+public static RemoteObject _id = RemoteObject.createImmutable(0);
+public static b4a.example.main _main = null;
 public static b4a.example.starter _starter = null;
 public static b4a.example.mainmenu _mainmenu = null;
-public static b4a.example.mainusuario _mainusuario = null;
   public Object[] GetGlobals() {
-		return new Object[] {"Activity",main.mostCurrent._activity,"MainMenu",Debug.moduleToString(b4a.example.mainmenu.class),"MainUsuario",Debug.moduleToString(b4a.example.mainusuario.class),"manager",main.mostCurrent._manager,"Panel1",main.mostCurrent._panel1,"Panel2",main.mostCurrent._panel2,"Starter",Debug.moduleToString(b4a.example.starter.class),"txt_email",main.mostCurrent._txt_email,"txt_password",main.mostCurrent._txt_password,"xui",main._xui};
+		return new Object[] {"Activity",mainusuario.mostCurrent._activity,"id",mainusuario._id,"list_usuario",mainusuario.mostCurrent._list_usuario,"Main",Debug.moduleToString(b4a.example.main.class),"MainMenu",Debug.moduleToString(b4a.example.mainmenu.class),"manger",mainusuario.mostCurrent._manger,"Starter",Debug.moduleToString(b4a.example.starter.class),"txt_email",mainusuario.mostCurrent._txt_email,"txt_nombre",mainusuario.mostCurrent._txt_nombre,"txt_passwd",mainusuario.mostCurrent._txt_passwd};
 }
 }

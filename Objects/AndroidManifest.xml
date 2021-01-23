@@ -33,5 +33,19 @@
 		</service>
 		<receiver android:name=".starter$starter_BR">
 		</receiver>
+		<activity
+			android:windowSoftInputMode="stateHidden"
+			android:launchMode="singleTop"
+			android:name=".mainmenu"
+			android:label="Movil Menu"
+			android:screenOrientation="unspecified">
+		</activity>
+		<activity
+			android:windowSoftInputMode="stateHidden"
+			android:launchMode="singleTop"
+			android:name=".mainusuario"
+			android:label="Movil Menu"
+			android:screenOrientation="unspecified">
+		</activity>
 	</application>
 </manifest>

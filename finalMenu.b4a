@@ -1,16 +1,25 @@
 ﻿Build1=Default,b4a.example
 File1=background.jpg
 File2=Layout.bal
+File3=lyMenu.bal
+File4=lyUsuario.bal
 FileGroup1=Nuevo Grupo
 FileGroup2=Default Group
+FileGroup3=Default Group
+FileGroup4=Default Group
 Group=Default Group
 Library1=core
 Library2=xui
+Library3=sql
 ManifestCode='This code will be applied to the manifest file during compilation.~\n~'You do not need to modify it in most cases.~\n~'See this link for for more information: https://www.b4x.com/forum/showthread.php?p=78136~\n~AddManifestText(~\n~<uses-sdk android:minSdkVersion="14" android:targetSdkVersion="29"/>~\n~<supports-screens android:largeScreens="true" ~\n~    android:normalScreens="true" ~\n~    android:smallScreens="true" ~\n~    android:anyDensity="true"/>)~\n~SetApplicationAttribute(android:icon, "@drawable/icon")~\n~SetApplicationAttribute(android:label, "$LABEL$")~\n~CreateResourceFromFile(Macro, Themes.LightTheme)~\n~'End of default text.~\n~
-Module1=Starter
-NumberOfFiles=2
-NumberOfLibraries=2
-NumberOfModules=1
+Module1=MainMenu
+Module2=MainUsuario
+Module3=ManagerUser
+Module4=Starter
+Module5=Usuario
+NumberOfFiles=4
+NumberOfLibraries=3
+NumberOfModules=5
 Version=10.5
 @EndOfDesignText@
 #Region  Project Attributes 
@@ -35,10 +44,20 @@ End Sub
 
 Sub Globals
 	'These global variables will be redeclared each time the activity is created.
+	Private Panel1 As Panel
+	Private Panel2 As Panel
+	
+	Dim manager As ManagerUser
+	
+	Private txt_email As EditText
+	Private txt_password As EditText
 End Sub
 
 Sub Activity_Create(FirstTime As Boolean)
 	Activity.LoadLayout("Layout")
+	
+	' inicializar la base de datos
+	manager.Initialize("users.sqlite")
 End Sub
 
 Sub Activity_Resume
@@ -51,4 +70,20 @@ End Sub
 
 Sub Button1_Click
 	xui.MsgboxAsync("Hello world!", "B4X")
+End Sub
+
+Private Sub btn_ingresar_Click
+	
+	'Dim user As Usuario = manager.readByEmail(txt_email.Text)
+	MsgboxAsync(txt_email.Text & " " & txt_password.Text, "OK")
+	
+	
+	'Declaro variable con dim
+	Dim data As Usuario
+	data.Initialize
+	
+	data.Email = txt_email.Text
+	
+	CallSubDelayed2(MainMenu, "Show", Array As String(txt_email.Text, "otro"))
+	
 End Sub
