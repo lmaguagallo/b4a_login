@@ -1,25 +1,31 @@
 ﻿Build1=Default,b4a.example
 File1=background.jpg
 File2=Layout.bal
-File3=lyMenu.bal
-File4=lyUsuario.bal
+File3=lyBilletes.bal
+File4=lyFechas.bal
+File5=lyMenu.bal
+File6=lyUsuario.bal
 FileGroup1=Nuevo Grupo
 FileGroup2=Default Group
 FileGroup3=Default Group
 FileGroup4=Default Group
+FileGroup5=Default Group
+FileGroup6=Default Group
 Group=Default Group
 Library1=core
 Library2=xui
 Library3=sql
 ManifestCode='This code will be applied to the manifest file during compilation.~\n~'You do not need to modify it in most cases.~\n~'See this link for for more information: https://www.b4x.com/forum/showthread.php?p=78136~\n~AddManifestText(~\n~<uses-sdk android:minSdkVersion="14" android:targetSdkVersion="29"/>~\n~<supports-screens android:largeScreens="true" ~\n~    android:normalScreens="true" ~\n~    android:smallScreens="true" ~\n~    android:anyDensity="true"/>)~\n~SetApplicationAttribute(android:icon, "@drawable/icon")~\n~SetApplicationAttribute(android:label, "$LABEL$")~\n~CreateResourceFromFile(Macro, Themes.LightTheme)~\n~'End of default text.~\n~
-Module1=MainMenu
-Module2=MainUsuario
-Module3=ManagerUser
-Module4=Starter
-Module5=Usuario
-NumberOfFiles=4
+Module1=MainCambio
+Module2=MainEdad
+Module3=MainMenu
+Module4=MainUsuario
+Module5=ManagerUser
+Module6=Starter
+Module7=Usuario
+NumberOfFiles=6
 NumberOfLibraries=3
-NumberOfModules=5
+NumberOfModules=7
 Version=10.5
 @EndOfDesignText@
 #Region  Project Attributes 
@@ -51,6 +57,11 @@ Sub Globals
 	
 	Private txt_email As EditText
 	Private txt_password As EditText
+	
+	Dim user As String
+	Dim passw As String
+	Dim nombre As String
+	
 End Sub
 
 Sub Activity_Create(FirstTime As Boolean)
@@ -74,16 +85,29 @@ End Sub
 
 Private Sub btn_ingresar_Click
 	
-	'Dim user As Usuario = manager.readByEmail(txt_email.Text)
-	MsgboxAsync(txt_email.Text & " " & txt_password.Text, "OK")
+	Dim u As Usuario = manager.readOne_email(txt_email.Text)
 	
+	If u = Null Then
+		MsgboxAsync("Usuario no encontrado!", "Ups")
+	Else
+		
+		nombre = u.Nombre
+		user = u.Email
+		passw = u.Password
+		
+		'Declaro variable con dim
+		Dim data As Usuario
+		data.Initialize
+		
+		If txt_email.Text = user And txt_password.Text = passw Then
+			CallSubDelayed2(MainMenu, "Show", Array As String(nombre, "otro"))
+			
+		End If
+		
+		
+		
+		
+	End If
 	
-	'Declaro variable con dim
-	Dim data As Usuario
-	data.Initialize
-	
-	data.Email = txt_email.Text
-	
-	CallSubDelayed2(MainMenu, "Show", Array As String(txt_email.Text, "otro"))
 	
 End Sub

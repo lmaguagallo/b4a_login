@@ -64,7 +64,9 @@ public static RemoteObject _id = RemoteObject.createImmutable(0);
 public static b4a.example.main _main = null;
 public static b4a.example.starter _starter = null;
 public static b4a.example.mainmenu _mainmenu = null;
+public static b4a.example.mainedad _mainedad = null;
+public static b4a.example.maincambio _maincambio = null;
   public Object[] GetGlobals() {
-		return new Object[] {"Activity",mainusuario.mostCurrent._activity,"id",mainusuario._id,"list_usuario",mainusuario.mostCurrent._list_usuario,"Main",Debug.moduleToString(b4a.example.main.class),"MainMenu",Debug.moduleToString(b4a.example.mainmenu.class),"manger",mainusuario.mostCurrent._manger,"Starter",Debug.moduleToString(b4a.example.starter.class),"txt_email",mainusuario.mostCurrent._txt_email,"txt_nombre",mainusuario.mostCurrent._txt_nombre,"txt_passwd",mainusuario.mostCurrent._txt_passwd};
+		return new Object[] {"Activity",mainusuario.mostCurrent._activity,"id",mainusuario._id,"list_usuario",mainusuario.mostCurrent._list_usuario,"Main",Debug.moduleToString(b4a.example.main.class),"MainCambio",Debug.moduleToString(b4a.example.maincambio.class),"MainEdad",Debug.moduleToString(b4a.example.mainedad.class),"MainMenu",Debug.moduleToString(b4a.example.mainmenu.class),"manger",mainusuario.mostCurrent._manger,"Starter",Debug.moduleToString(b4a.example.starter.class),"txt_email",mainusuario.mostCurrent._txt_email,"txt_nombre",mainusuario.mostCurrent._txt_nombre,"txt_passwd",mainusuario.mostCurrent._txt_passwd};
 }
 }

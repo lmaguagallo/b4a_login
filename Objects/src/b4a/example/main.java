@@ -353,6 +353,8 @@ public static boolean isAnyActivityVisible() {
 vis = vis | (main.mostCurrent != null);
 vis = vis | (mainmenu.mostCurrent != null);
 vis = vis | (mainusuario.mostCurrent != null);
+vis = vis | (mainedad.mostCurrent != null);
+vis = vis | (maincambio.mostCurrent != null);
 return vis;}
 
 private static BA killProgramHelper(BA ba) {
@@ -401,6 +403,30 @@ BA.applicationContext.stopService(new android.content.Intent(BA.applicationConte
             if (__a != null)
 				__a.finish();}
 
+ {
+            Activity __a = null;
+            if (mainedad.previousOne != null) {
+				__a = mainedad.previousOne.get();
+			}
+            else {
+                BA ba = killProgramHelper(mainedad.mostCurrent == null ? null : mainedad.mostCurrent.processBA);
+                if (ba != null) __a = ba.activity;
+            }
+            if (__a != null)
+				__a.finish();}
+
+ {
+            Activity __a = null;
+            if (maincambio.previousOne != null) {
+				__a = maincambio.previousOne.get();
+			}
+            else {
+                BA ba = killProgramHelper(maincambio.mostCurrent == null ? null : maincambio.mostCurrent.processBA);
+                if (ba != null) __a = ba.activity;
+            }
+            if (__a != null)
+				__a.finish();}
+
 }
 public anywheresoftware.b4a.keywords.Common __c = null;
 public static anywheresoftware.b4a.objects.B4XViewWrapper.XUI _xui = null;
@@ -409,9 +435,14 @@ public anywheresoftware.b4a.objects.PanelWrapper _panel2 = null;
 public b4a.example.manageruser _manager = null;
 public anywheresoftware.b4a.objects.EditTextWrapper _txt_email = null;
 public anywheresoftware.b4a.objects.EditTextWrapper _txt_password = null;
+public static String _user = "";
+public static String _passw = "";
+public static String _nombre = "";
 public b4a.example.starter _starter = null;
 public b4a.example.mainmenu _mainmenu = null;
 public b4a.example.mainusuario _mainusuario = null;
+public b4a.example.mainedad _mainedad = null;
+public b4a.example.maincambio _maincambio = null;
 public static String  _activity_create(boolean _firsttime) throws Exception{
 RDebugUtils.currentModule="main";
 if (Debug.shouldDelegate(mostCurrent.activityBA, "activity_create", false))
@@ -450,26 +481,45 @@ public static String  _btn_ingresar_click() throws Exception{
 RDebugUtils.currentModule="main";
 if (Debug.shouldDelegate(mostCurrent.activityBA, "btn_ingresar_click", false))
 	 {return ((String) Debug.delegate(mostCurrent.activityBA, "btn_ingresar_click", null));}
+b4a.example.usuario _u = null;
 b4a.example.usuario _data = null;
-RDebugUtils.currentLine=5701632;
- //BA.debugLineNum = 5701632;BA.debugLine="Private Sub btn_ingresar_Click";
-RDebugUtils.currentLine=5701635;
- //BA.debugLineNum = 5701635;BA.debugLine="MsgboxAsync(txt_email.Text & \" \" & txt_password.T";
-anywheresoftware.b4a.keywords.Common.MsgboxAsync(BA.ObjectToCharSequence(mostCurrent._txt_email.getText()+" "+mostCurrent._txt_password.getText()),BA.ObjectToCharSequence("OK"),processBA);
-RDebugUtils.currentLine=5701639;
- //BA.debugLineNum = 5701639;BA.debugLine="Dim data As Usuario";
+RDebugUtils.currentLine=393216;
+ //BA.debugLineNum = 393216;BA.debugLine="Private Sub btn_ingresar_Click";
+RDebugUtils.currentLine=393218;
+ //BA.debugLineNum = 393218;BA.debugLine="Dim u As Usuario = manager.readOne_email(txt_emai";
+_u = mostCurrent._manager._readone_email /*b4a.example.usuario*/ (null,mostCurrent._txt_email.getText());
+RDebugUtils.currentLine=393220;
+ //BA.debugLineNum = 393220;BA.debugLine="If u = Null Then";
+if (_u== null) { 
+RDebugUtils.currentLine=393221;
+ //BA.debugLineNum = 393221;BA.debugLine="MsgboxAsync(\"Usuario no encontrado!\", \"Ups\")";
+anywheresoftware.b4a.keywords.Common.MsgboxAsync(BA.ObjectToCharSequence("Usuario no encontrado!"),BA.ObjectToCharSequence("Ups"),processBA);
+ }else {
+RDebugUtils.currentLine=393224;
+ //BA.debugLineNum = 393224;BA.debugLine="nombre = u.Nombre";
+mostCurrent._nombre = _u._nombre /*String*/ ;
+RDebugUtils.currentLine=393225;
+ //BA.debugLineNum = 393225;BA.debugLine="user = u.Email";
+mostCurrent._user = _u._email /*String*/ ;
+RDebugUtils.currentLine=393226;
+ //BA.debugLineNum = 393226;BA.debugLine="passw = u.Password";
+mostCurrent._passw = _u._password /*String*/ ;
+RDebugUtils.currentLine=393229;
+ //BA.debugLineNum = 393229;BA.debugLine="Dim data As Usuario";
 _data = new b4a.example.usuario();
-RDebugUtils.currentLine=5701640;
- //BA.debugLineNum = 5701640;BA.debugLine="data.Initialize";
+RDebugUtils.currentLine=393230;
+ //BA.debugLineNum = 393230;BA.debugLine="data.Initialize";
 _data._initialize /*String*/ (null,processBA);
-RDebugUtils.currentLine=5701642;
- //BA.debugLineNum = 5701642;BA.debugLine="data.Email = txt_email.Text";
-_data._email /*String*/  = mostCurrent._txt_email.getText();
-RDebugUtils.currentLine=5701644;
- //BA.debugLineNum = 5701644;BA.debugLine="CallSubDelayed2(MainMenu, \"Show\", Array As String";
-anywheresoftware.b4a.keywords.Common.CallSubDelayed2(processBA,(Object)(mostCurrent._mainmenu.getObject()),"Show",(Object)(new String[]{mostCurrent._txt_email.getText(),"otro"}));
-RDebugUtils.currentLine=5701646;
- //BA.debugLineNum = 5701646;BA.debugLine="End Sub";
+RDebugUtils.currentLine=393232;
+ //BA.debugLineNum = 393232;BA.debugLine="If txt_email.Text = user And txt_password.Text =";
+if ((mostCurrent._txt_email.getText()).equals(mostCurrent._user) && (mostCurrent._txt_password.getText()).equals(mostCurrent._passw)) { 
+RDebugUtils.currentLine=393233;
+ //BA.debugLineNum = 393233;BA.debugLine="CallSubDelayed2(MainMenu, \"Show\", Array As Stri";
+anywheresoftware.b4a.keywords.Common.CallSubDelayed2(processBA,(Object)(mostCurrent._mainmenu.getObject()),"Show",(Object)(new String[]{mostCurrent._nombre,"otro"}));
+ };
+ };
+RDebugUtils.currentLine=393243;
+ //BA.debugLineNum = 393243;BA.debugLine="End Sub";
 return "";
 }
 public static String  _button1_click() throws Exception{

@@ -10,7 +10,7 @@ Sub Class_Globals
 	Public Id_usuario As Int
 	Public Nombre As String
 	Public Email As String
-	Public Password as String
+	Public Password As String
 	
 End Sub
 

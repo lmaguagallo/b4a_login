@@ -17,6 +17,8 @@ public static b4a.example.main _main = null;
 public static b4a.example.starter _starter = null;
 public static b4a.example.mainmenu _mainmenu = null;
 public static b4a.example.mainusuario _mainusuario = null;
+public static b4a.example.mainedad _mainedad = null;
+public static b4a.example.maincambio _maincambio = null;
 public static Object[] GetGlobals(RemoteObject _ref) throws Exception {
 		return new Object[] {"bdd",_ref.getField(false, "_bdd"),"sql",_ref.getField(false, "_sql")};
 }

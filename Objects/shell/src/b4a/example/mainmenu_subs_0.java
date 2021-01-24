@@ -59,6 +59,44 @@ catch (Exception e) {
 finally {
 			Debug.PopSubsStack();
 		}}
+public static RemoteObject  _btn_calcubilletes_click() throws Exception{
+try {
+		Debug.PushSubsStack("btn_calcuBilletes_Click (mainmenu) ","mainmenu",4,mainmenu.mostCurrent.activityBA,mainmenu.mostCurrent,45);
+if (RapidSub.canDelegate("btn_calcubilletes_click")) { return b4a.example.mainmenu.remoteMe.runUserSub(false, "mainmenu","btn_calcubilletes_click");}
+ BA.debugLineNum = 45;BA.debugLine="Private Sub btn_calcuBilletes_Click";
+Debug.ShouldStop(4096);
+ BA.debugLineNum = 46;BA.debugLine="CallSubDelayed2(MainCambio, \"Show\", Array As Stri";
+Debug.ShouldStop(8192);
+mainmenu.mostCurrent.__c.runVoidMethod ("CallSubDelayed2",mainmenu.processBA,(Object)((mainmenu.mostCurrent._maincambio.getObject())),(Object)(BA.ObjectToString("Show")),(Object)((RemoteObject.createNewArray("String",new int[] {1},new Object[] {RemoteObject.createImmutable("Calculadora de cambio")}))));
+ BA.debugLineNum = 48;BA.debugLine="End Sub";
+Debug.ShouldStop(32768);
+return RemoteObject.createImmutable("");
+}
+catch (Exception e) {
+			throw Debug.ErrorCaught(e);
+		} 
+finally {
+			Debug.PopSubsStack();
+		}}
+public static RemoteObject  _btn_calcuedad_click() throws Exception{
+try {
+		Debug.PushSubsStack("btn_calcuEdad_Click (mainmenu) ","mainmenu",4,mainmenu.mostCurrent.activityBA,mainmenu.mostCurrent,50);
+if (RapidSub.canDelegate("btn_calcuedad_click")) { return b4a.example.mainmenu.remoteMe.runUserSub(false, "mainmenu","btn_calcuedad_click");}
+ BA.debugLineNum = 50;BA.debugLine="Private Sub btn_calcuEdad_Click";
+Debug.ShouldStop(131072);
+ BA.debugLineNum = 51;BA.debugLine="CallSubDelayed2(MainEdad, \"Show\", Array As String";
+Debug.ShouldStop(262144);
+mainmenu.mostCurrent.__c.runVoidMethod ("CallSubDelayed2",mainmenu.processBA,(Object)((mainmenu.mostCurrent._mainedad.getObject())),(Object)(BA.ObjectToString("Show")),(Object)((RemoteObject.createNewArray("String",new int[] {1},new Object[] {RemoteObject.createImmutable("Calculadora de Edad")}))));
+ BA.debugLineNum = 53;BA.debugLine="End Sub";
+Debug.ShouldStop(1048576);
+return RemoteObject.createImmutable("");
+}
+catch (Exception e) {
+			throw Debug.ErrorCaught(e);
+		} 
+finally {
+			Debug.PopSubsStack();
+		}}
 public static RemoteObject  _btn_usuarios_click() throws Exception{
 try {
 		Debug.PushSubsStack("btn_usuarios_Click (mainmenu) ","mainmenu",4,mainmenu.mostCurrent.activityBA,mainmenu.mostCurrent,37);

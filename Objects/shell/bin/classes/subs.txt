@@ -4,27 +4,27 @@ b4a.example
 manageruser
 usuario
 0
-main,activity_create,1,0,32,37
+main,activity_create,1,0,37,42
 ,panel1,,panel2,,txt_email,,txt_password,,manager
 ,panel1,,panel2,,txt_email,,txt_password
 manageruser,initialize
-main,activity_pause,0,0,43,45
+main,activity_pause,0,0,48,50
 
 
 
-main,activity_resume,0,0,39,41
+main,activity_resume,0,0,44,46
 
 
 
-main,btn_ingresar_click,0,0,51,65
-,txt_email,,txt_password
-
-usuario,initialize
-main,button1_click,0,0,47,49
+main,btn_ingresar_click,0,0,56,83
+,manager,,txt_email,,nombre,,user,,passw,,txt_password
+,nombre,,user,,passw
+manageruser,readone_email,usuario,initialize
+main,button1_click,0,0,52,54
 ,xui
 
 
-main,globals,0,1,21,30
+main,globals,0,1,21,35
 
 
 
@@ -33,6 +33,10 @@ main,process_globals,0,1,15,19
 
 
 manageruser,initialize,0,0,9,17
+
+
+
+manageruser,readone_email,0,0,34,51
 
 
 
@@ -49,10 +53,6 @@ manageruser,delete_user,0,0,96,99
 
 
 manageruser,readbyemail,0,0,54,77
-
-
-
-manageruser,readone_email,0,0,34,51
 
 
 
@@ -101,6 +101,14 @@ mainmenu,activity_pause,0,0,29,31
 
 
 mainmenu,activity_resume,0,0,25,27
+
+
+
+mainmenu,btn_calcubilletes_click,0,0,45,48
+
+
+
+mainmenu,btn_calcuedad_click,0,0,50,53
 
 
 
@@ -157,6 +165,54 @@ mainusuario,globals,0,1,12,27
 
 
 mainusuario,process_globals,0,1,6,10
+
+
+
+mainedad,activity_create,1,0,21,25
+,lbl_resultados,,txt_fechahasta,,txt_fechainicio
+,lbl_resultados,,txt_fechahasta,,txt_fechainicio
+
+mainedad,activity_pause,0,0,31,33
+
+
+
+mainedad,activity_resume,0,0,27,29
+
+
+
+mainedad,btn_calcular_click,0,0,36,44
+,txt_fechahasta,,txt_fechainicio,,lbl_resultados
+
+
+mainedad,globals,0,1,12,19
+
+
+
+mainedad,process_globals,0,1,6,10
+
+
+
+maincambio,activity_create,1,0,28,32
+,lbl_10usd,,lbl_1usd,,lbl_20usd,,lbl_5usd,,txt_valor
+,lbl_10usd,,lbl_1usd,,lbl_20usd,,lbl_5usd,,txt_valor
+
+maincambio,activity_pause,0,0,38,40
+
+
+
+maincambio,activity_resume,0,0,34,36
+
+
+
+maincambio,btn_calcular_click,0,0,43,94
+,txt_valor,,billetes_disponibles,,lbl_20usd,,lbl_10usd,,lbl_5usd,,lbl_1usd
+
+
+maincambio,globals,0,1,12,26
+,billetes_disponibles
+,billetes_disponibles
+
+maincambio,process_globals,0,1,6,10
 
 
 

@@ -61,10 +61,15 @@ public static RemoteObject _panel2 = RemoteObject.declareNull("anywheresoftware.
 public static RemoteObject _manager = RemoteObject.declareNull("b4a.example.manageruser");
 public static RemoteObject _txt_email = RemoteObject.declareNull("anywheresoftware.b4a.objects.EditTextWrapper");
 public static RemoteObject _txt_password = RemoteObject.declareNull("anywheresoftware.b4a.objects.EditTextWrapper");
+public static RemoteObject _user = RemoteObject.createImmutable("");
+public static RemoteObject _passw = RemoteObject.createImmutable("");
+public static RemoteObject _nombre = RemoteObject.createImmutable("");
 public static b4a.example.starter _starter = null;
 public static b4a.example.mainmenu _mainmenu = null;
 public static b4a.example.mainusuario _mainusuario = null;
+public static b4a.example.mainedad _mainedad = null;
+public static b4a.example.maincambio _maincambio = null;
   public Object[] GetGlobals() {
-		return new Object[] {"Activity",main.mostCurrent._activity,"MainMenu",Debug.moduleToString(b4a.example.mainmenu.class),"MainUsuario",Debug.moduleToString(b4a.example.mainusuario.class),"manager",main.mostCurrent._manager,"Panel1",main.mostCurrent._panel1,"Panel2",main.mostCurrent._panel2,"Starter",Debug.moduleToString(b4a.example.starter.class),"txt_email",main.mostCurrent._txt_email,"txt_password",main.mostCurrent._txt_password,"xui",main._xui};
+		return new Object[] {"Activity",main.mostCurrent._activity,"MainCambio",Debug.moduleToString(b4a.example.maincambio.class),"MainEdad",Debug.moduleToString(b4a.example.mainedad.class),"MainMenu",Debug.moduleToString(b4a.example.mainmenu.class),"MainUsuario",Debug.moduleToString(b4a.example.mainusuario.class),"manager",main.mostCurrent._manager,"nombre",main.mostCurrent._nombre,"Panel1",main.mostCurrent._panel1,"Panel2",main.mostCurrent._panel2,"passw",main.mostCurrent._passw,"Starter",Debug.moduleToString(b4a.example.starter.class),"txt_email",main.mostCurrent._txt_email,"txt_password",main.mostCurrent._txt_password,"user",main.mostCurrent._user,"xui",main._xui};
 }
 }

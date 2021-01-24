@@ -14,7 +14,7 @@ usuario._id_usuario = RemoteObject.createImmutable(0);__ref.setField("_id_usuari
 usuario._nombre = RemoteObject.createImmutable("");__ref.setField("_nombre",usuario._nombre);
  //BA.debugLineNum = 6;BA.debugLine="Public Email As String";
 usuario._email = RemoteObject.createImmutable("");__ref.setField("_email",usuario._email);
- //BA.debugLineNum = 7;BA.debugLine="Public Password as String";
+ //BA.debugLineNum = 7;BA.debugLine="Public Password As String";
 usuario._password = RemoteObject.createImmutable("");__ref.setField("_password",usuario._password);
  //BA.debugLineNum = 9;BA.debugLine="End Sub";
 return RemoteObject.createImmutable("");

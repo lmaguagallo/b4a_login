@@ -348,61 +348,89 @@ public anywheresoftware.b4a.keywords.Common __c = null;
 public b4a.example.main _main = null;
 public b4a.example.starter _starter = null;
 public b4a.example.mainusuario _mainusuario = null;
+public b4a.example.mainedad _mainedad = null;
+public b4a.example.maincambio _maincambio = null;
 public static String  _activity_create(boolean _firsttime) throws Exception{
 RDebugUtils.currentModule="mainmenu";
 if (Debug.shouldDelegate(mostCurrent.activityBA, "activity_create", false))
 	 {return ((String) Debug.delegate(mostCurrent.activityBA, "activity_create", new Object[] {_firsttime}));}
-RDebugUtils.currentLine=5898240;
- //BA.debugLineNum = 5898240;BA.debugLine="Sub Activity_Create(FirstTime As Boolean)";
-RDebugUtils.currentLine=5898242;
- //BA.debugLineNum = 5898242;BA.debugLine="Activity.LoadLayout(\"lyMenu\")";
+RDebugUtils.currentLine=1572864;
+ //BA.debugLineNum = 1572864;BA.debugLine="Sub Activity_Create(FirstTime As Boolean)";
+RDebugUtils.currentLine=1572866;
+ //BA.debugLineNum = 1572866;BA.debugLine="Activity.LoadLayout(\"lyMenu\")";
 mostCurrent._activity.LoadLayout("lyMenu",mostCurrent.activityBA);
-RDebugUtils.currentLine=5898244;
- //BA.debugLineNum = 5898244;BA.debugLine="End Sub";
+RDebugUtils.currentLine=1572868;
+ //BA.debugLineNum = 1572868;BA.debugLine="End Sub";
 return "";
 }
 public static String  _activity_pause(boolean _userclosed) throws Exception{
 RDebugUtils.currentModule="mainmenu";
-RDebugUtils.currentLine=6029312;
- //BA.debugLineNum = 6029312;BA.debugLine="Sub Activity_Pause (UserClosed As Boolean)";
-RDebugUtils.currentLine=6029314;
- //BA.debugLineNum = 6029314;BA.debugLine="End Sub";
+RDebugUtils.currentLine=1703936;
+ //BA.debugLineNum = 1703936;BA.debugLine="Sub Activity_Pause (UserClosed As Boolean)";
+RDebugUtils.currentLine=1703938;
+ //BA.debugLineNum = 1703938;BA.debugLine="End Sub";
 return "";
 }
 public static String  _activity_resume() throws Exception{
 RDebugUtils.currentModule="mainmenu";
 if (Debug.shouldDelegate(mostCurrent.activityBA, "activity_resume", false))
 	 {return ((String) Debug.delegate(mostCurrent.activityBA, "activity_resume", null));}
-RDebugUtils.currentLine=5963776;
- //BA.debugLineNum = 5963776;BA.debugLine="Sub Activity_Resume";
-RDebugUtils.currentLine=5963778;
- //BA.debugLineNum = 5963778;BA.debugLine="End Sub";
+RDebugUtils.currentLine=1638400;
+ //BA.debugLineNum = 1638400;BA.debugLine="Sub Activity_Resume";
+RDebugUtils.currentLine=1638402;
+ //BA.debugLineNum = 1638402;BA.debugLine="End Sub";
+return "";
+}
+public static String  _btn_calcubilletes_click() throws Exception{
+RDebugUtils.currentModule="mainmenu";
+if (Debug.shouldDelegate(mostCurrent.activityBA, "btn_calcubilletes_click", false))
+	 {return ((String) Debug.delegate(mostCurrent.activityBA, "btn_calcubilletes_click", null));}
+RDebugUtils.currentLine=2949120;
+ //BA.debugLineNum = 2949120;BA.debugLine="Private Sub btn_calcuBilletes_Click";
+RDebugUtils.currentLine=2949121;
+ //BA.debugLineNum = 2949121;BA.debugLine="CallSubDelayed2(MainCambio, \"Show\", Array As Stri";
+anywheresoftware.b4a.keywords.Common.CallSubDelayed2(processBA,(Object)(mostCurrent._maincambio.getObject()),"Show",(Object)(new String[]{"Calculadora de cambio"}));
+RDebugUtils.currentLine=2949123;
+ //BA.debugLineNum = 2949123;BA.debugLine="End Sub";
+return "";
+}
+public static String  _btn_calcuedad_click() throws Exception{
+RDebugUtils.currentModule="mainmenu";
+if (Debug.shouldDelegate(mostCurrent.activityBA, "btn_calcuedad_click", false))
+	 {return ((String) Debug.delegate(mostCurrent.activityBA, "btn_calcuedad_click", null));}
+RDebugUtils.currentLine=3014656;
+ //BA.debugLineNum = 3014656;BA.debugLine="Private Sub btn_calcuEdad_Click";
+RDebugUtils.currentLine=3014657;
+ //BA.debugLineNum = 3014657;BA.debugLine="CallSubDelayed2(MainEdad, \"Show\", Array As String";
+anywheresoftware.b4a.keywords.Common.CallSubDelayed2(processBA,(Object)(mostCurrent._mainedad.getObject()),"Show",(Object)(new String[]{"Calculadora de Edad"}));
+RDebugUtils.currentLine=3014659;
+ //BA.debugLineNum = 3014659;BA.debugLine="End Sub";
 return "";
 }
 public static String  _btn_usuarios_click() throws Exception{
 RDebugUtils.currentModule="mainmenu";
 if (Debug.shouldDelegate(mostCurrent.activityBA, "btn_usuarios_click", false))
 	 {return ((String) Debug.delegate(mostCurrent.activityBA, "btn_usuarios_click", null));}
-RDebugUtils.currentLine=6488064;
- //BA.debugLineNum = 6488064;BA.debugLine="Private Sub btn_usuarios_Click";
-RDebugUtils.currentLine=6488066;
- //BA.debugLineNum = 6488066;BA.debugLine="CallSubDelayed2(MainUsuario, \"Show\", Array As Str";
+RDebugUtils.currentLine=1835008;
+ //BA.debugLineNum = 1835008;BA.debugLine="Private Sub btn_usuarios_Click";
+RDebugUtils.currentLine=1835010;
+ //BA.debugLineNum = 1835010;BA.debugLine="CallSubDelayed2(MainUsuario, \"Show\", Array As Str";
 anywheresoftware.b4a.keywords.Common.CallSubDelayed2(processBA,(Object)(mostCurrent._mainusuario.getObject()),"Show",(Object)(new String[]{"Ingreso de Usuarios"}));
-RDebugUtils.currentLine=6488068;
- //BA.debugLineNum = 6488068;BA.debugLine="End Sub";
+RDebugUtils.currentLine=1835012;
+ //BA.debugLineNum = 1835012;BA.debugLine="End Sub";
 return "";
 }
 public static String  _show(String[] _data) throws Exception{
 RDebugUtils.currentModule="mainmenu";
 if (Debug.shouldDelegate(mostCurrent.activityBA, "show", false))
 	 {return ((String) Debug.delegate(mostCurrent.activityBA, "show", new Object[] {_data}));}
-RDebugUtils.currentLine=6094848;
- //BA.debugLineNum = 6094848;BA.debugLine="Public Sub show(data() As String)";
-RDebugUtils.currentLine=6094849;
- //BA.debugLineNum = 6094849;BA.debugLine="ToastMessageShow(\"Bienvenido \" & data(0), True)";
+RDebugUtils.currentLine=1769472;
+ //BA.debugLineNum = 1769472;BA.debugLine="Public Sub show(data() As String)";
+RDebugUtils.currentLine=1769473;
+ //BA.debugLineNum = 1769473;BA.debugLine="ToastMessageShow(\"Bienvenido \" & data(0), True)";
 anywheresoftware.b4a.keywords.Common.ToastMessageShow(BA.ObjectToCharSequence("Bienvenido "+_data[(int) (0)]),anywheresoftware.b4a.keywords.Common.True);
-RDebugUtils.currentLine=6094850;
- //BA.debugLineNum = 6094850;BA.debugLine="End Sub";
+RDebugUtils.currentLine=1769474;
+ //BA.debugLineNum = 1769474;BA.debugLine="End Sub";
 return "";
 }
 }

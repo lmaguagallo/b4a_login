@@ -46,3 +46,14 @@ Private Sub btn_usuarios_Click
 	
 End Sub
 
+
+
+Private Sub btn_calcuBilletes_Click
+	CallSubDelayed2(MainCambio, "Show", Array As String("Calculadora de cambio"))
+	
+End Sub
+
+Private Sub btn_calcuEdad_Click
+	CallSubDelayed2(MainEdad, "Show", Array As String("Calculadora de Edad"))
+	
+End Sub

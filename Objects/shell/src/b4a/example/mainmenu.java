@@ -58,7 +58,9 @@ public static RemoteObject __c = RemoteObject.declareNull("anywheresoftware.b4a.
 public static b4a.example.main _main = null;
 public static b4a.example.starter _starter = null;
 public static b4a.example.mainusuario _mainusuario = null;
+public static b4a.example.mainedad _mainedad = null;
+public static b4a.example.maincambio _maincambio = null;
   public Object[] GetGlobals() {
-		return new Object[] {"Activity",mainmenu.mostCurrent._activity,"Main",Debug.moduleToString(b4a.example.main.class),"MainUsuario",Debug.moduleToString(b4a.example.mainusuario.class),"Starter",Debug.moduleToString(b4a.example.starter.class)};
+		return new Object[] {"Activity",mainmenu.mostCurrent._activity,"Main",Debug.moduleToString(b4a.example.main.class),"MainCambio",Debug.moduleToString(b4a.example.maincambio.class),"MainEdad",Debug.moduleToString(b4a.example.mainedad.class),"MainUsuario",Debug.moduleToString(b4a.example.mainusuario.class),"Starter",Debug.moduleToString(b4a.example.starter.class)};
 }
 }

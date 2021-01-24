@@ -39,37 +39,39 @@ public b4a.example.main _main = null;
 public b4a.example.starter _starter = null;
 public b4a.example.mainmenu _mainmenu = null;
 public b4a.example.mainusuario _mainusuario = null;
+public b4a.example.mainedad _mainedad = null;
+public b4a.example.maincambio _maincambio = null;
 public String  _initialize(b4a.example.usuario __ref,anywheresoftware.b4a.BA _ba) throws Exception{
 __ref = this;
 innerInitialize(_ba);
 RDebugUtils.currentModule="usuario";
 if (Debug.shouldDelegate(ba, "initialize", false))
 	 {return ((String) Debug.delegate(ba, "initialize", new Object[] {_ba}));}
-RDebugUtils.currentLine=1966080;
- //BA.debugLineNum = 1966080;BA.debugLine="Public Sub Initialize";
-RDebugUtils.currentLine=1966082;
- //BA.debugLineNum = 1966082;BA.debugLine="End Sub";
+RDebugUtils.currentLine=1376256;
+ //BA.debugLineNum = 1376256;BA.debugLine="Public Sub Initialize";
+RDebugUtils.currentLine=1376258;
+ //BA.debugLineNum = 1376258;BA.debugLine="End Sub";
 return "";
 }
 public String  _class_globals(b4a.example.usuario __ref) throws Exception{
 __ref = this;
 RDebugUtils.currentModule="usuario";
-RDebugUtils.currentLine=1900544;
- //BA.debugLineNum = 1900544;BA.debugLine="Sub Class_Globals";
-RDebugUtils.currentLine=1900547;
- //BA.debugLineNum = 1900547;BA.debugLine="Public Id_usuario As Int";
+RDebugUtils.currentLine=1310720;
+ //BA.debugLineNum = 1310720;BA.debugLine="Sub Class_Globals";
+RDebugUtils.currentLine=1310723;
+ //BA.debugLineNum = 1310723;BA.debugLine="Public Id_usuario As Int";
 _id_usuario = 0;
-RDebugUtils.currentLine=1900548;
- //BA.debugLineNum = 1900548;BA.debugLine="Public Nombre As String";
+RDebugUtils.currentLine=1310724;
+ //BA.debugLineNum = 1310724;BA.debugLine="Public Nombre As String";
 _nombre = "";
-RDebugUtils.currentLine=1900549;
- //BA.debugLineNum = 1900549;BA.debugLine="Public Email As String";
+RDebugUtils.currentLine=1310725;
+ //BA.debugLineNum = 1310725;BA.debugLine="Public Email As String";
 _email = "";
-RDebugUtils.currentLine=1900550;
- //BA.debugLineNum = 1900550;BA.debugLine="Public Password as String";
+RDebugUtils.currentLine=1310726;
+ //BA.debugLineNum = 1310726;BA.debugLine="Public Password As String";
 _password = "";
-RDebugUtils.currentLine=1900552;
- //BA.debugLineNum = 1900552;BA.debugLine="End Sub";
+RDebugUtils.currentLine=1310728;
+ //BA.debugLineNum = 1310728;BA.debugLine="End Sub";
 return "";
 }
 }

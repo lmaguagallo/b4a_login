@@ -37,6 +37,8 @@ public b4a.example.main _main = null;
 public b4a.example.starter _starter = null;
 public b4a.example.mainmenu _mainmenu = null;
 public b4a.example.mainusuario _mainusuario = null;
+public b4a.example.mainedad _mainedad = null;
+public b4a.example.maincambio _maincambio = null;
 public String  _initialize(b4a.example.manageruser __ref,anywheresoftware.b4a.BA _ba,String _bddnombre) throws Exception{
 __ref = this;
 innerInitialize(_ba);
@@ -57,6 +59,54 @@ __ref._sql /*anywheresoftware.b4a.sql.SQL*/ .ExecNonQuery("CREATE TABLE IF NOT E
 RDebugUtils.currentLine=917512;
  //BA.debugLineNum = 917512;BA.debugLine="End Sub";
 return "";
+}
+public b4a.example.usuario  _readone_email(b4a.example.manageruser __ref,String _email) throws Exception{
+__ref = this;
+RDebugUtils.currentModule="manageruser";
+if (Debug.shouldDelegate(ba, "readone_email", false))
+	 {return ((b4a.example.usuario) Debug.delegate(ba, "readone_email", new Object[] {_email}));}
+anywheresoftware.b4a.sql.SQL.CursorWrapper _curs = null;
+b4a.example.usuario _item = null;
+RDebugUtils.currentLine=1048576;
+ //BA.debugLineNum = 1048576;BA.debugLine="Public Sub readOne_email(email As String) As Usuar";
+RDebugUtils.currentLine=1048577;
+ //BA.debugLineNum = 1048577;BA.debugLine="Dim curs As Cursor";
+_curs = new anywheresoftware.b4a.sql.SQL.CursorWrapper();
+RDebugUtils.currentLine=1048578;
+ //BA.debugLineNum = 1048578;BA.debugLine="curs = sql.ExecQuery2(\"SELECT * FROM usuario WHER";
+_curs = (anywheresoftware.b4a.sql.SQL.CursorWrapper) anywheresoftware.b4a.AbsObjectWrapper.ConvertToWrapper(new anywheresoftware.b4a.sql.SQL.CursorWrapper(), (android.database.Cursor)(__ref._sql /*anywheresoftware.b4a.sql.SQL*/ .ExecQuery2("SELECT * FROM usuario WHERE email = ?",new String[]{_email})));
+RDebugUtils.currentLine=1048580;
+ //BA.debugLineNum = 1048580;BA.debugLine="If curs.RowCount < 1 Then";
+if (_curs.getRowCount()<1) { 
+RDebugUtils.currentLine=1048581;
+ //BA.debugLineNum = 1048581;BA.debugLine="Return Null";
+if (true) return (b4a.example.usuario)(__c.Null);
+ }else {
+RDebugUtils.currentLine=1048583;
+ //BA.debugLineNum = 1048583;BA.debugLine="curs.Position = 0";
+_curs.setPosition((int) (0));
+RDebugUtils.currentLine=1048585;
+ //BA.debugLineNum = 1048585;BA.debugLine="Dim item As Usuario";
+_item = new b4a.example.usuario();
+RDebugUtils.currentLine=1048586;
+ //BA.debugLineNum = 1048586;BA.debugLine="item.Id_usuario = curs.GetInt(\"id_user\")";
+_item._id_usuario /*int*/  = _curs.GetInt("id_user");
+RDebugUtils.currentLine=1048587;
+ //BA.debugLineNum = 1048587;BA.debugLine="item.Nombre = curs.GetString(\"nombre\")";
+_item._nombre /*String*/  = _curs.GetString("nombre");
+RDebugUtils.currentLine=1048588;
+ //BA.debugLineNum = 1048588;BA.debugLine="item.Email = curs.GetString(\"email\")";
+_item._email /*String*/  = _curs.GetString("email");
+RDebugUtils.currentLine=1048589;
+ //BA.debugLineNum = 1048589;BA.debugLine="item.Password = curs.GetString(\"password\")";
+_item._password /*String*/  = _curs.GetString("password");
+RDebugUtils.currentLine=1048590;
+ //BA.debugLineNum = 1048590;BA.debugLine="Return item";
+if (true) return _item;
+ };
+RDebugUtils.currentLine=1048593;
+ //BA.debugLineNum = 1048593;BA.debugLine="End Sub";
+return null;
 }
 public String  _class_globals(b4a.example.manageruser __ref) throws Exception{
 __ref = this;
@@ -79,28 +129,28 @@ RDebugUtils.currentModule="manageruser";
 if (Debug.shouldDelegate(ba, "create_user", false))
 	 {return ((b4a.example.usuario) Debug.delegate(ba, "create_user", new Object[] {_nombre,_email,_passw}));}
 b4a.example.usuario _usr = null;
-RDebugUtils.currentLine=1835008;
- //BA.debugLineNum = 1835008;BA.debugLine="Public Sub create_User(nombre As String, email As";
-RDebugUtils.currentLine=1835010;
- //BA.debugLineNum = 1835010;BA.debugLine="Dim usr As Usuario";
+RDebugUtils.currentLine=983040;
+ //BA.debugLineNum = 983040;BA.debugLine="Public Sub create_User(nombre As String, email As";
+RDebugUtils.currentLine=983042;
+ //BA.debugLineNum = 983042;BA.debugLine="Dim usr As Usuario";
 _usr = new b4a.example.usuario();
-RDebugUtils.currentLine=1835012;
- //BA.debugLineNum = 1835012;BA.debugLine="usr.Nombre = nombre";
+RDebugUtils.currentLine=983044;
+ //BA.debugLineNum = 983044;BA.debugLine="usr.Nombre = nombre";
 _usr._nombre /*String*/  = _nombre;
-RDebugUtils.currentLine=1835013;
- //BA.debugLineNum = 1835013;BA.debugLine="usr.Email = email";
+RDebugUtils.currentLine=983045;
+ //BA.debugLineNum = 983045;BA.debugLine="usr.Email = email";
 _usr._email /*String*/  = _email;
-RDebugUtils.currentLine=1835014;
- //BA.debugLineNum = 1835014;BA.debugLine="usr.Password = passw";
+RDebugUtils.currentLine=983046;
+ //BA.debugLineNum = 983046;BA.debugLine="usr.Password = passw";
 _usr._password /*String*/  = _passw;
-RDebugUtils.currentLine=1835016;
- //BA.debugLineNum = 1835016;BA.debugLine="sql.ExecNonQuery2(\"INSERT INTO usuario(nombre, em";
+RDebugUtils.currentLine=983048;
+ //BA.debugLineNum = 983048;BA.debugLine="sql.ExecNonQuery2(\"INSERT INTO usuario(nombre, em";
 __ref._sql /*anywheresoftware.b4a.sql.SQL*/ .ExecNonQuery2("INSERT INTO usuario(nombre, email, password) VALUES (?,?,?)",anywheresoftware.b4a.keywords.Common.ArrayToList(new Object[]{(Object)(_nombre),(Object)(_email),(Object)(_passw)}));
-RDebugUtils.currentLine=1835019;
- //BA.debugLineNum = 1835019;BA.debugLine="Return usr";
+RDebugUtils.currentLine=983051;
+ //BA.debugLineNum = 983051;BA.debugLine="Return usr";
 if (true) return _usr;
-RDebugUtils.currentLine=1835021;
- //BA.debugLineNum = 1835021;BA.debugLine="End Sub";
+RDebugUtils.currentLine=983053;
+ //BA.debugLineNum = 983053;BA.debugLine="End Sub";
 return null;
 }
 public String  _delete_user(b4a.example.manageruser __ref,int _id) throws Exception{
@@ -108,13 +158,13 @@ __ref = this;
 RDebugUtils.currentModule="manageruser";
 if (Debug.shouldDelegate(ba, "delete_user", false))
 	 {return ((String) Debug.delegate(ba, "delete_user", new Object[] {_id}));}
-RDebugUtils.currentLine=5636096;
- //BA.debugLineNum = 5636096;BA.debugLine="Public Sub delete_User( id As Int)";
-RDebugUtils.currentLine=5636097;
- //BA.debugLineNum = 5636097;BA.debugLine="sql.ExecNonQuery2(\"DELETE FROM usuario WHERE id_u";
+RDebugUtils.currentLine=1245184;
+ //BA.debugLineNum = 1245184;BA.debugLine="Public Sub delete_User( id As Int)";
+RDebugUtils.currentLine=1245185;
+ //BA.debugLineNum = 1245185;BA.debugLine="sql.ExecNonQuery2(\"DELETE FROM usuario WHERE id_u";
 __ref._sql /*anywheresoftware.b4a.sql.SQL*/ .ExecNonQuery2("DELETE FROM usuario WHERE id_user = ?",anywheresoftware.b4a.keywords.Common.ArrayToList(new Object[]{(Object)(_id)}));
-RDebugUtils.currentLine=5636099;
- //BA.debugLineNum = 5636099;BA.debugLine="End Sub";
+RDebugUtils.currentLine=1245187;
+ //BA.debugLineNum = 1245187;BA.debugLine="End Sub";
 return "";
 }
 public anywheresoftware.b4a.objects.collections.List  _readbyemail(b4a.example.manageruser __ref,String _email) throws Exception{
@@ -126,103 +176,55 @@ anywheresoftware.b4a.sql.SQL.CursorWrapper _curs = null;
 anywheresoftware.b4a.objects.collections.List _user_item = null;
 int _i = 0;
 b4a.example.usuario _aux_urs = null;
-RDebugUtils.currentLine=3276800;
- //BA.debugLineNum = 3276800;BA.debugLine="Public Sub readByEmail(email As String) As List";
-RDebugUtils.currentLine=3276802;
- //BA.debugLineNum = 3276802;BA.debugLine="Dim curs As Cursor";
+RDebugUtils.currentLine=1114112;
+ //BA.debugLineNum = 1114112;BA.debugLine="Public Sub readByEmail(email As String) As List";
+RDebugUtils.currentLine=1114114;
+ //BA.debugLineNum = 1114114;BA.debugLine="Dim curs As Cursor";
 _curs = new anywheresoftware.b4a.sql.SQL.CursorWrapper();
-RDebugUtils.currentLine=3276803;
- //BA.debugLineNum = 3276803;BA.debugLine="Dim user_item As List";
+RDebugUtils.currentLine=1114115;
+ //BA.debugLineNum = 1114115;BA.debugLine="Dim user_item As List";
 _user_item = new anywheresoftware.b4a.objects.collections.List();
-RDebugUtils.currentLine=3276804;
- //BA.debugLineNum = 3276804;BA.debugLine="user_item.Initialize()";
+RDebugUtils.currentLine=1114116;
+ //BA.debugLineNum = 1114116;BA.debugLine="user_item.Initialize()";
 _user_item.Initialize();
-RDebugUtils.currentLine=3276806;
- //BA.debugLineNum = 3276806;BA.debugLine="curs = sql.ExecQuery2(\"SELECT * FROM usuario WHER";
+RDebugUtils.currentLine=1114118;
+ //BA.debugLineNum = 1114118;BA.debugLine="curs = sql.ExecQuery2(\"SELECT * FROM usuario WHER";
 _curs = (anywheresoftware.b4a.sql.SQL.CursorWrapper) anywheresoftware.b4a.AbsObjectWrapper.ConvertToWrapper(new anywheresoftware.b4a.sql.SQL.CursorWrapper(), (android.database.Cursor)(__ref._sql /*anywheresoftware.b4a.sql.SQL*/ .ExecQuery2("SELECT * FROM usuario WHERE email LIKE ?",new String[]{"%"+_email+"%"})));
-RDebugUtils.currentLine=3276808;
- //BA.debugLineNum = 3276808;BA.debugLine="For i = 0 To curs.RowCount -1 Step 1";
+RDebugUtils.currentLine=1114120;
+ //BA.debugLineNum = 1114120;BA.debugLine="For i = 0 To curs.RowCount -1 Step 1";
 {
 final int step5 = 1;
 final int limit5 = (int) (_curs.getRowCount()-1);
 _i = (int) (0) ;
 for (;_i <= limit5 ;_i = _i + step5 ) {
-RDebugUtils.currentLine=3276809;
- //BA.debugLineNum = 3276809;BA.debugLine="curs.Position = i";
+RDebugUtils.currentLine=1114121;
+ //BA.debugLineNum = 1114121;BA.debugLine="curs.Position = i";
 _curs.setPosition(_i);
-RDebugUtils.currentLine=3276811;
- //BA.debugLineNum = 3276811;BA.debugLine="Dim aux_urs As Usuario";
+RDebugUtils.currentLine=1114123;
+ //BA.debugLineNum = 1114123;BA.debugLine="Dim aux_urs As Usuario";
 _aux_urs = new b4a.example.usuario();
-RDebugUtils.currentLine=3276813;
- //BA.debugLineNum = 3276813;BA.debugLine="aux_urs.Id_usuario = curs.GetInt(\"id_user\")";
+RDebugUtils.currentLine=1114125;
+ //BA.debugLineNum = 1114125;BA.debugLine="aux_urs.Id_usuario = curs.GetInt(\"id_user\")";
 _aux_urs._id_usuario /*int*/  = _curs.GetInt("id_user");
-RDebugUtils.currentLine=3276814;
- //BA.debugLineNum = 3276814;BA.debugLine="aux_urs.Nombre = curs.GetString(\"nombre\")";
+RDebugUtils.currentLine=1114126;
+ //BA.debugLineNum = 1114126;BA.debugLine="aux_urs.Nombre = curs.GetString(\"nombre\")";
 _aux_urs._nombre /*String*/  = _curs.GetString("nombre");
-RDebugUtils.currentLine=3276815;
- //BA.debugLineNum = 3276815;BA.debugLine="aux_urs.Email = curs.GetString(\"email\")";
+RDebugUtils.currentLine=1114127;
+ //BA.debugLineNum = 1114127;BA.debugLine="aux_urs.Email = curs.GetString(\"email\")";
 _aux_urs._email /*String*/  = _curs.GetString("email");
-RDebugUtils.currentLine=3276816;
- //BA.debugLineNum = 3276816;BA.debugLine="aux_urs.Password = curs.GetString(\"password\")";
+RDebugUtils.currentLine=1114128;
+ //BA.debugLineNum = 1114128;BA.debugLine="aux_urs.Password = curs.GetString(\"password\")";
 _aux_urs._password /*String*/  = _curs.GetString("password");
-RDebugUtils.currentLine=3276818;
- //BA.debugLineNum = 3276818;BA.debugLine="user_item.Add(aux_urs)";
+RDebugUtils.currentLine=1114130;
+ //BA.debugLineNum = 1114130;BA.debugLine="user_item.Add(aux_urs)";
 _user_item.Add((Object)(_aux_urs));
  }
 };
-RDebugUtils.currentLine=3276821;
- //BA.debugLineNum = 3276821;BA.debugLine="Return user_item";
+RDebugUtils.currentLine=1114133;
+ //BA.debugLineNum = 1114133;BA.debugLine="Return user_item";
 if (true) return _user_item;
-RDebugUtils.currentLine=3276823;
- //BA.debugLineNum = 3276823;BA.debugLine="End Sub";
-return null;
-}
-public b4a.example.usuario  _readone_email(b4a.example.manageruser __ref,String _email) throws Exception{
-__ref = this;
-RDebugUtils.currentModule="manageruser";
-if (Debug.shouldDelegate(ba, "readone_email", false))
-	 {return ((b4a.example.usuario) Debug.delegate(ba, "readone_email", new Object[] {_email}));}
-anywheresoftware.b4a.sql.SQL.CursorWrapper _curs = null;
-b4a.example.usuario _item = null;
-RDebugUtils.currentLine=3801088;
- //BA.debugLineNum = 3801088;BA.debugLine="Public Sub readOne_email(email As String) As Usuar";
-RDebugUtils.currentLine=3801089;
- //BA.debugLineNum = 3801089;BA.debugLine="Dim curs As Cursor";
-_curs = new anywheresoftware.b4a.sql.SQL.CursorWrapper();
-RDebugUtils.currentLine=3801090;
- //BA.debugLineNum = 3801090;BA.debugLine="curs = sql.ExecQuery2(\"SELECT * FROM usuario WHER";
-_curs = (anywheresoftware.b4a.sql.SQL.CursorWrapper) anywheresoftware.b4a.AbsObjectWrapper.ConvertToWrapper(new anywheresoftware.b4a.sql.SQL.CursorWrapper(), (android.database.Cursor)(__ref._sql /*anywheresoftware.b4a.sql.SQL*/ .ExecQuery2("SELECT * FROM usuario WHERE email = ?",new String[]{_email})));
-RDebugUtils.currentLine=3801092;
- //BA.debugLineNum = 3801092;BA.debugLine="If curs.RowCount < 1 Then";
-if (_curs.getRowCount()<1) { 
-RDebugUtils.currentLine=3801093;
- //BA.debugLineNum = 3801093;BA.debugLine="Return Null";
-if (true) return (b4a.example.usuario)(__c.Null);
- }else {
-RDebugUtils.currentLine=3801095;
- //BA.debugLineNum = 3801095;BA.debugLine="curs.Position = 0";
-_curs.setPosition((int) (0));
-RDebugUtils.currentLine=3801097;
- //BA.debugLineNum = 3801097;BA.debugLine="Dim item As Usuario";
-_item = new b4a.example.usuario();
-RDebugUtils.currentLine=3801098;
- //BA.debugLineNum = 3801098;BA.debugLine="item.Id_usuario = curs.GetInt(\"id_user\")";
-_item._id_usuario /*int*/  = _curs.GetInt("id_user");
-RDebugUtils.currentLine=3801099;
- //BA.debugLineNum = 3801099;BA.debugLine="item.Nombre = curs.GetString(\"nombre\")";
-_item._nombre /*String*/  = _curs.GetString("nombre");
-RDebugUtils.currentLine=3801100;
- //BA.debugLineNum = 3801100;BA.debugLine="item.Email = curs.GetString(\"email\")";
-_item._email /*String*/  = _curs.GetString("email");
-RDebugUtils.currentLine=3801101;
- //BA.debugLineNum = 3801101;BA.debugLine="item.Password = curs.GetString(\"password\")";
-_item._password /*String*/  = _curs.GetString("password");
-RDebugUtils.currentLine=3801102;
- //BA.debugLineNum = 3801102;BA.debugLine="Return item";
-if (true) return _item;
- };
-RDebugUtils.currentLine=3801105;
- //BA.debugLineNum = 3801105;BA.debugLine="End Sub";
+RDebugUtils.currentLine=1114135;
+ //BA.debugLineNum = 1114135;BA.debugLine="End Sub";
 return null;
 }
 public b4a.example.usuario  _update_user(b4a.example.manageruser __ref,int _id,String _nombre,String _email,String _passw) throws Exception{
@@ -231,28 +233,28 @@ RDebugUtils.currentModule="manageruser";
 if (Debug.shouldDelegate(ba, "update_user", false))
 	 {return ((b4a.example.usuario) Debug.delegate(ba, "update_user", new Object[] {_id,_nombre,_email,_passw}));}
 b4a.example.usuario _usr = null;
-RDebugUtils.currentLine=4521984;
- //BA.debugLineNum = 4521984;BA.debugLine="Public Sub update_User(id As Int, nombre As String";
-RDebugUtils.currentLine=4521986;
- //BA.debugLineNum = 4521986;BA.debugLine="Dim usr As Usuario";
+RDebugUtils.currentLine=1179648;
+ //BA.debugLineNum = 1179648;BA.debugLine="Public Sub update_User(id As Int, nombre As String";
+RDebugUtils.currentLine=1179650;
+ //BA.debugLineNum = 1179650;BA.debugLine="Dim usr As Usuario";
 _usr = new b4a.example.usuario();
-RDebugUtils.currentLine=4521988;
- //BA.debugLineNum = 4521988;BA.debugLine="usr.Nombre = nombre";
+RDebugUtils.currentLine=1179652;
+ //BA.debugLineNum = 1179652;BA.debugLine="usr.Nombre = nombre";
 _usr._nombre /*String*/  = _nombre;
-RDebugUtils.currentLine=4521989;
- //BA.debugLineNum = 4521989;BA.debugLine="usr.Email = email";
+RDebugUtils.currentLine=1179653;
+ //BA.debugLineNum = 1179653;BA.debugLine="usr.Email = email";
 _usr._email /*String*/  = _email;
-RDebugUtils.currentLine=4521990;
- //BA.debugLineNum = 4521990;BA.debugLine="usr.Password = passw";
+RDebugUtils.currentLine=1179654;
+ //BA.debugLineNum = 1179654;BA.debugLine="usr.Password = passw";
 _usr._password /*String*/  = _passw;
-RDebugUtils.currentLine=4521992;
- //BA.debugLineNum = 4521992;BA.debugLine="sql.ExecNonQuery2( _ 	\"UPDATE usuario SET nombre";
+RDebugUtils.currentLine=1179656;
+ //BA.debugLineNum = 1179656;BA.debugLine="sql.ExecNonQuery2( _ 	\"UPDATE usuario SET nombre";
 __ref._sql /*anywheresoftware.b4a.sql.SQL*/ .ExecNonQuery2("UPDATE usuario SET nombre = ?, email = ?, password = ? WHERE id_user = ?",anywheresoftware.b4a.keywords.Common.ArrayToList(new Object[]{(Object)(_nombre),(Object)(_email),(Object)(_passw),(Object)(_id)}));
-RDebugUtils.currentLine=4521996;
- //BA.debugLineNum = 4521996;BA.debugLine="Return usr";
+RDebugUtils.currentLine=1179660;
+ //BA.debugLineNum = 1179660;BA.debugLine="Return usr";
 if (true) return _usr;
-RDebugUtils.currentLine=4521998;
- //BA.debugLineNum = 4521998;BA.debugLine="End Sub";
+RDebugUtils.currentLine=1179662;
+ //BA.debugLineNum = 1179662;BA.debugLine="End Sub";
 return null;
 }
 }
